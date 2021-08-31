@@ -1,0 +1,8 @@
+# LineBotMessageForwardTeamsChannel
+
+## はじめに
+本プログラムは、aws lambda上で動作することを想定した
+LINE BotへのメッセージをTeamsに転送するプログラムです。
+awsへの配置はserverlessを使う想定です。
+Teams側はIncoming Webhookの機能を使います。
+serverless.yml内のenvironmentの部分を自身の環境に合わせて変更することで利用可能となります。
