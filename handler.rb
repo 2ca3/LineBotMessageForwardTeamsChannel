@@ -33,7 +33,7 @@ def webhook(event:, context:)
         # LINEへ結果報告
         res_message = '転送完了'
         if code != 200 then
-          res_message = '転送失敗 code[' + res.code  + ']'
+          res_message = '転送失敗 code[' + code  + ']'
         end
         client.reply_message(event['replyToken'], {
           type: 'text',
