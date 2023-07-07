@@ -33,7 +33,7 @@ def webhook(event:, context:)
         # LINEへ結果報告
         res_message = '転送完了'
         if code != 200 then
-          res_message = '転送失敗 code[' + code  + ']'
+          res_message = '転送失敗 code[' + code.to_s + ']'
         end
         client.reply_message(event['replyToken'], {
           type: 'text',
@@ -52,6 +52,7 @@ def teams_send(message, uri)
   https = Net::HTTP.new(uri.host, uri.port)
   https.use_ssl = true
   req  = Net::HTTP::Post.new(uri.request_uri)
+  req.content_type = 'application/json'
   data = {
     'text' => message
   }.to_json

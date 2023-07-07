@@ -1,9 +1,10 @@
 service: line-kintai
-frameworkVersion: '2'
+frameworkVersion: '3'
 
 provider:
   name: aws
   runtime: ruby2.7
+  timeout: 60
   lambdaHashingVersion: 20201221
 
   memorySize: 256
